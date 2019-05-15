@@ -2,6 +2,8 @@
 
 The project is a complete revamp of Mosh Hamedani E-Commerce Project which was developed in Angular 4. This project is developed in Angular 7 and Firebase as a database. The project is brimmed with fresh new Material look and addition of new features like Payment, Sorting, Pagination and Searching in the main page. Also filled with Transitions, Router Animations and Smooth Scroll Effect.
 
+Note: Payment Option with Paypal is deactivated in the site provided above as API key is removed. If you want Paypal Payment activated, just head on to Paypal Developer Account, Register and get the Sandbox API key and then paste it in check-out.component.ts file of Angular 7 project in sandbox field and facilitator account in payee field. Remember to login with Paypal's buyer account which is provided in Paypal Developer Accounts and put the password and there you go.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
 
 ## Development server
