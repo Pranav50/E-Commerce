@@ -60,7 +60,7 @@ export class CheckOutComponent implements OnInit, OnDestroy {
           client: {
             // Step 1:  Put your sandbox API (Register for Paypal Developer Account
             // and get the sandbox API)
-              sandbox: 'AWqnCOjBs9BS8Ir5bS_c3qWPoXA1GuiDFLt-QPePXMtFkz5lSoZaUrzfZTYF3a-jH8AzsrbslwwNHOwt',
+              sandbox: 'Your Sandbox API Here',
           },
           payment: (data, actions) => {
               return actions.payment.create({
@@ -73,9 +73,9 @@ export class CheckOutComponent implements OnInit, OnDestroy {
                           },
                           // Step 2: Your Facilitator Paypal email ID
                           // Remember your provided Email ID below must be 
-                          // facilitator and Login Email ID must
-                          // be buyer in order to process the payment
-                          payee:{email:'pawarpranav2375-facilitator@yahoo.in'},
+                          // of facilitator and Login Email ID must
+                          // be of buyer in order to process the payment
+                          payee:{email:'Your facilitator Email ID Here'},
                       }
                   ]
                   }
