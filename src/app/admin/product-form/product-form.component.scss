@@ -1,0 +1,26 @@
+.card-deck {
+    width:260px;
+    margin-top:20px;
+    margin-left:50px;
+}
+
+.card-body {}
+md-form {
+    position: relative;
+}
+
+.alert-message {
+    background-color: #c23616;
+    position: absolute;
+    z-index: 10;
+    border-radius: 3px;
+    color: white;
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+    animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+

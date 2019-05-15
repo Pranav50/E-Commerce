@@ -1,0 +1,35 @@
+<!-- Card -->
+<mdb-card>
+  <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+    
+  </div>
+  <!--Card content--> 
+  <mdb-card-body>
+    <!--Title-->
+    <mdb-card-title>
+      <h4>Order Summary</h4>
+    </mdb-card-title>
+
+    <!--Text-->
+    <div *ngIf="cart$ | async as cart">
+      <mdb-card-text>You have {{cart.totalItemsCount}} items in your Shopping Cart</mdb-card-text>
+      <ul class="list-group list-group-flush">
+        <li *ngFor="let item of cart.items" class="list-group-item">
+          {{ item.quantity }} x {{ item.product.title }}
+          <div class="float-right">
+              {{item.totalPrice | currency: 'USD': true}}
+          </div>
+        </li>
+        <li class="list-group-item font-weight-bold">
+              Total
+              <div class="float-right">
+                {{ cart.totalPrice | currency}}
+              </div>
+        </li> 
+      </ul>
+    </div> 
+    
+  </mdb-card-body>
+</mdb-card>
+<br> 
+

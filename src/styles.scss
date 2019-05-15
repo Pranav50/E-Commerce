@@ -1,0 +1,108 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+
+/* label style */
+.mat-tab-label{
+    background: #22a6b3;
+    color:white;
+  }
+  /* focus style */
+  .mat-tab-group.mat-primary .mat-tab-label:not(.mat-tab-disabled):focus, .mat-tab-group.mat-primary .mat-tab-link:not(.mat-tab-disabled):focus, .mat-tab-nav-bar.mat-primary .mat-tab-label:not(.mat-tab-disabled):focus, .mat-tab-nav-bar.mat-primary .mat-tab-link:not(.mat-tab-disabled):focus{
+    
+  }
+  /* ink bar style */
+  .mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar{
+    background: #2e86de;
+    height: 3px;
+    border-radius:15px;
+  } 
+  
+  .confirm-dialog-container .mat-dialog-container {
+    border-radius: .25em .25em .4em .4em;
+    padding: 0px;
+    
+  }
+
+  .confirm-dialog-container .content-container {
+    margin: 5px 5px 15px 5px;
+    color: #8f9cb5;
+    display: flex;
+  }
+
+  .confirm-dialog-container #close-icon {
+    margin-left: auto;
+    order:2;
+    font-weight: bolder;
+  }
+
+  .confirm-dialog-container #close-icon {
+    cursor: pointer;
+    color: #b2bec3;
+  }
+
+  .confirm-dialog-container #close-icon:hover {
+    color: #ff7675;
+    transition: 0.3s ease-in-out;
+  }
+
+  .confirm-dialog-container #yes-button {
+      height: 50px;
+      width: 50%;
+      background-color: #2e86de;
+      color: white;
+      border-radius: 0px; 
+  }
+
+  .confirm-dialog-container #no-button {
+    height: 50px;
+    width: 50%;
+    background-color: #22a6b3;
+    color: white;
+    border-radius: 0px; 
+}
+
+  .confirm-dialog-container span.content-span {
+      padding: 35px 16px;
+      text-align: center;
+      font-size: 20px;
+  }
+
+.confirm-dialog-container {
+    transition: 0.3s ease-in-out;
+  }
+
+.list-group-item-action {
+  background-color: #ecf0f1;
+  border-color: #ecf0f1;
+}
+
+.col-4 {
+  max-width: 27.333333%;
+}
+
+mat-form-field {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0; 
+}
+// Auto Resizing
+/*###Desktops, big landscape tablets and laptops(Large, Extra large)####*/
+@media screen and (min-width: 1024px){
+  /*Style*/
+  }
+  
+  /*###Tablet(medium)###*/
+  @media screen and (min-width : 660px) and (max-width : 1023px){
+  /*Style*/
+  }
+  
+  /*### Smartphones (portrait and landscape)(small)### */
+  @media screen and (min-width : 500px) and (max-width : 659px){
+    .list-group-item-action, .mat-expansion-panel-header-title {
+      font-size: 1.1vw;
+      text-align: left;
+    }
+  }

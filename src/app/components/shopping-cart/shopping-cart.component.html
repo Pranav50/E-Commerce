@@ -1,0 +1,46 @@
+<h1 style="margin-top: 20px" class="text-center">Shopping Cart</h1>
+<ng-container *ngIf="cart$ | async as cart">
+        <h4> You have {{ cart.totalItemsCount }} items in your Cart </h4>
+        <table class="table table-hover">
+                <thead class="thead-class">
+                  <tr>
+                    <th>Image</th>
+                    <th>Title</th>
+                    <th>Quantity</th>
+                    <th style="text-align:-webkit-center">Add/Remove</th>
+                    <th></th>
+                    <th></th>
+                    <th>Total Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of cart.items">
+                    <td scope="row">
+                      <img [src]="item.product.imageUrl" class="thumbnail" alt="" />
+                    </td>
+                    <td>{{ item.product.title }}</td>
+                    <td>${{item.product.price}} X {{ item.quantity }}</td>
+                    <td>
+                      <product-quantity [product]="item.product" 
+                      [shopping-cart]="cart"></product-quantity>
+                    </td>  
+                    <td></td>
+                    <td></td>
+                    <td>{{ item.totalPrice | currency: 'USD': true}}</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th><h6>{{cart.totalPrice | currency: 'USD': true}}</h6></th> 
+                  </tr>
+                </tfoot>
+              </table>
+              <a *ngIf="cart.items.length" routerLink="/components/check-out" class="btn btn-primary btn-block">Checkout</a>
+              <button *ngIf="cart.items.length" type="button" (click)="clearCart()" class="btn btn-light btn-block">Clear Shopping Cart</button>
+</ng-container>

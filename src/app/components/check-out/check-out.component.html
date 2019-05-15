@@ -1,0 +1,104 @@
+<h1 style="margin-top: 20px">This is Checkout Page</h1>
+
+<mat-horizontal-stepper linear #stepper>
+  <mat-step>
+    <form >
+      <ng-template matStepLabel>Order Summary</ng-template>
+
+      <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+        <div class="col-5">
+          <shopping-cart-summary></shopping-cart-summary>
+        </div>        
+      </div>
+
+      <div>
+          <button mdbBtn type="button" style="color:white" color="cyan" mdbWavesEffect matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step> 
+
+  <mat-step >
+      <ng-template matStepLabel>Shipping address</ng-template>
+      <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+        <div class="row">
+          <div class="col-7">
+          <div class="card-body px-lg-3 pt-0">
+            <div class="row">
+              <div class="col-md-6">
+                  <form class="text-center p-4" style="color: #757575;" 
+                  #f="ngForm">
+                      <div class="form-row">
+                          <div class="col">
+        
+                              <div class="md-form">
+                                  <input type="text" #name="ngModel" [(ngModel)]="shipping.name"  
+                                  name="name" id="name" placeholder="Name" class="form-control" required>
+        
+                                  <div class="alert alert-danger" class="alert-message" *ngIf="name.touched && name.invalid">
+                                    Name is required
+                                  </div>
+                                  
+                              </div>
+        
+                              <div class="md-form">
+                                <input type="text" #address1="ngModel" [(ngModel)]="shipping.address1" 
+                                name="address1" id="address1" placeholder="Address 1" class="form-control" required>
+        
+                                <div class="alert alert-danger" class="alert-message" *ngIf="address1.touched && address1.invalid">
+                                  Adddress 1 is required
+                                </div>
+                                
+                              </div>
+        
+                              <div class="md-form">
+                                <input type="text" #address2="ngModel" [(ngModel)]="shipping.address2" 
+                                name="address2" id="address2" placeholder="Address 2" class="form-control" required>
+        
+                                <div class="alert alert-danger" class="alert-message" *ngIf="address2.touched && address2.invalid">
+                                  Address 2 is required
+                                </div>
+                                
+                              </div>
+        
+                              <div class="md-form">
+                                <input type="text" #city="ngModel" [(ngModel)]="shipping.city" 
+                                name="city" id="city" placeholder="City" class="form-control" required>
+        
+                                <div class="alert alert-danger" class="alert-message" *ngIf="city.touched && city.invalid">
+                                  City is required
+                                </div>                             
+                              </div>
+                          </div>
+                      </div>
+                      <div>
+                          <button mdbBtn type="button" style="color:white" color="light-blue" matStepperPrevious mdbWavesEffect>Back</button>
+                          <button mdbBtn type="button" style="color:white" (click)="placeOrder()"  color="cyan" mdbWavesEffect matStepperNext [disabled]="!f.valid">Next</button>
+                      </div>
+                  </form>
+              </div>
+            </div>
+          </div>
+          <br>
+        </div>    
+        </div>
+
+      </div>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Payment</ng-template>
+    <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+      <div class="col-5">
+        <div *ngIf="cart$ | async as cart">
+          <input type="hidden" [(ngModel)]="cart.totalPrice">
+          <div (click)="openCheckoutPaypal()" id="paypal-checkout-btn" style="box-shadow: 5px 10px 18px #888888;"></div> 
+        </div>
+        <br>
+        <br><br>
+      </div>        
+    </div>
+    <div>
+        <button mdbBtn type="button" style="color:white" color="light-blue" matStepperPrevious mdbWavesEffect>Back</button>
+        <button type="button" mdbBtn color="light" (click)="cancelTransaction()" mdbWavesEffect>Cancel Transaction</button>
+      </div>
+  </mat-step>
+</mat-horizontal-stepper>

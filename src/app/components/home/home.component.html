@@ -1,0 +1,87 @@
+<mdb-carousel class="carousel slide carousel-fade" [animation]="'fade'">
+  <mdb-carousel-item>
+    <img class="d-block w-100" src="../../../assets/img/watch_banner.jpg" id="banner" alt="First slide">
+  </mdb-carousel-item>
+  <mdb-carousel-item>
+    <img class="d-block w-100" src="../../../assets/img/watch_banner2.jpg" id="banner" alt="Third slide">
+  </mdb-carousel-item>
+  <mdb-carousel-item>
+    <img class="d-block w-100" src="../../../assets/img/watch_banner3.jpg" id="banner" alt="Third slide">
+  </mdb-carousel-item>
+</mdb-carousel>
+<br><br>
+
+<div class="row">   
+    <div class="col-4">
+      <!-- Add class = 'sticky-top' below to stick the accordion on page -->
+      <div style="top: 65px; margin-left: 5px;">
+       
+          <mat-accordion >
+                <product-filter  [gender]="gender" [category]="category" 
+                [shape]="shape" [bmake]="bmake" [band]="band" [dial]="dial"></product-filter>
+           
+                <mat-expansion-panel> 
+                  <mat-expansion-panel-header>  
+                    <mat-panel-title>
+                      Price
+                    </mat-panel-title> 
+                    
+                  </mat-expansion-panel-header>
+                  <div id="myPrice">
+                    <div class="list-group">
+                      <a *ngFor="let p of price$ | async"
+                      class="list-group-item list-group-item-action"
+                     (click)="onClick(p.key)" routerLink="/"
+                      [class.active]="price === p.key">     
+                            {{p.name}} 
+                      </a>
+                    </div>
+                  </div>   
+                </mat-expansion-panel> 
+            
+              </mat-accordion>
+       
+      </div>
+     
+    </div>  
+     
+    <div class="col">
+          <div class="card bg-light mb-3" id="panel" style="max-width: 800px;">
+                  <mat-form-field class="search-form-field" floatLabel="never">
+                      <input matInput type="text" placeholder="Search Products" [(ngModel)]="searchKey" 
+                      autocomplete="on" #query (keyup)="filter(query.value)">
+                      <button mat-button *ngIf="searchKey" matSuffix mat-icon-button aria-label="Clear" (click)="onClear()">
+                          <mat-icon>close</mat-icon>
+                      </button>
+                    </mat-form-field>
+            <div class="card-header">Latest Arrivals</div>
+            <div class="card-body" >
+                <div class="row" *ngIf="cart$ | async as cart">
+                    <ng-container *ngFor="let p of (filteredProducts | reverse | slice:0:3)">
+                      <div class="col-md-4">
+                        <latest [product]="p" [shopping-cart] = "cart"></latest>
+                      </div>
+                    </ng-container>
+                </div>           
+            </div>
+          </div> 
+           
+        <div class="row" style="margin-right:3px" *ngIf="cart$ | async as cart">
+            <ng-container *ngFor="let p of filteredProducts | 
+            paginate: { itemsPerPage: 9, currentPage: pageActual}; let i = index">
+              <div class="col-md-4" id="panel">
+                  <!-- Card -->
+                 <product-card [product]="p" [shopping-cart] = "cart"></product-card>
+                    <!--End of Card -->
+                    <br>
+              </div>
+          
+                    <div *ngIf="(i+1) % 3 === 0" class="w-100"></div>
+            </ng-container>
+        </div>
+        <pagination-controls class="my-pagination" (pageChange)="pageActual = $event; onPageChange($event)"></pagination-controls>
+
+    </div>
+</div>
+<br><br>
+<br><br>

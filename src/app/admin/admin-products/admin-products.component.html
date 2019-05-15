@@ -1,0 +1,80 @@
+<h1 style="margin-top: 20px">This is Admin Product Page</h1>
+
+        <div class="search-div">
+                <a routerLink="/admin/products/new"  mdbBtn color="primary" mdbWavesEffect>
+                    Add Product
+                </a>
+                <mat-form-field class="search-form-field" floatLabel="never">
+                        <input matInput type="text" placeholder="Search" [(ngModel)]="searchKey" 
+                        autocomplete="on" (keyup)="applyFilter()">
+                        <button mat-button *ngIf="searchKey" matSuffix mat-icon-button aria-label="Clear" (click)="onClear()">
+                            <mat-icon>close</mat-icon>
+                        </button>
+                </mat-form-field> 
+        </div> 
+
+<br>
+
+<mat-table [dataSource]="listData" class="mat-elevation-z8" matSort>
+  
+    <!-- Title Column -->
+    <ng-container matColumnDef="title">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Title </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.title}} </mat-cell>
+    </ng-container>
+  
+    <!-- Price Column -->
+    <ng-container matColumnDef="price">
+      <mat-header-cell *matHeaderCellDef mat-sort-header >Price</mat-header-cell>
+      <mat-cell *matCellDef="let element">$ {{element.price}} </mat-cell>
+    </ng-container>
+
+    <!-- Gender Column -->
+    <ng-container matColumnDef="gender">
+        <mat-header-cell *matHeaderCellDef mat-sort-header >Gender</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.gender}} </mat-cell>
+    </ng-container>
+
+      <!-- Shape Column -->
+    <ng-container matColumnDef="shape">
+        <mat-header-cell *matHeaderCellDef mat-sort-header >Shape</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{element.shape}} </mat-cell>
+    </ng-container>
+  
+    <!-- Categories Column -->
+    <ng-container matColumnDef="categories">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Categories</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.categories}} </mat-cell>
+    </ng-container>
+  
+    <!-- Image Column -->
+    <ng-container matColumnDef="imageUrl" style="margin-right: 20px;">
+      <mat-header-cell *matHeaderCellDef>Image</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <img src="{{element.imageUrl}}" class="rounded-circle" width="65" height="100">
+      </mat-cell>
+    </ng-container>
+
+      <ng-container matColumnDef="edit"> 
+        <mat-header-cell *matHeaderCellDef>Edit</mat-header-cell>
+        <mat-cell *matCellDef="let element">
+            <a [routerLink]="['/admin/products/', element.key]">
+                <mat-icon>launch</mat-icon>
+            </a>
+        </mat-cell>
+      </ng-container>   
+
+      <ng-container matColumnDef="delete">
+        <mat-header-cell *matHeaderCellDef>Delete</mat-header-cell>
+        <mat-cell *matCellDef="let element">
+            <a (click)="delete(element.key)">
+                <i class="fas fa-trash"></i>
+            </a> 
+        </mat-cell>
+      </ng-container>  
+  
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+  <mat-paginator [pageSizeOptions]="[5,10,25,100]" [pageSize]="5"
+  showFirstLastButtons></mat-paginator>

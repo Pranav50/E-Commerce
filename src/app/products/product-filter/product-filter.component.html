@@ -1,0 +1,142 @@
+<div >
+  
+    <mat-expansion-panel> 
+      
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Categories
+        </mat-panel-title>
+        
+      </mat-expansion-panel-header>  
+      
+        <div class="list-group">
+          <a class="list-group-item list-group-item-action"
+          [class.active]="!category" routerLink="/">
+            All Categories
+          </a>
+          <a *ngFor="let c of categories$ | async" 
+          class="list-group-item list-group-item-action"
+          routerLink="/" [queryParams]="{ category : c.key}"
+          [class.active]="category === c.key">     
+                {{c.name}}
+          </a>
+        </div>
+       
+    </mat-expansion-panel> 
+    
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Gender
+        </mat-panel-title>
+         
+      </mat-expansion-panel-header>
+  
+          <div class="list-group">
+          <a class="list-group-item list-group-item-action"
+          [class.active]="!gender" routerLink="/">
+            All Gender
+          </a>
+          <a *ngFor="let g of gender$ | async" 
+          class="list-group-item list-group-item-action"
+          routerLink="/" [queryParams]="{ gender : g.key}"
+          [class.active]="gender === g.key">     
+                {{g.name}}
+          </a>
+        </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Shape 
+        </mat-panel-title>
+        
+      </mat-expansion-panel-header>
+      <div class="list-group">
+        <a class="list-group-item list-group-item-action"
+        [class.active]="!shape" routerLink="/">
+          All Shapes
+        </a>
+        <a *ngFor="let s of shape$ | async" 
+        class="list-group-item list-group-item-action"
+        routerLink="/" [queryParams]="{ shape : s.key}"
+        [class.active]="shape === s.key">     
+              {{s.name}}
+        </a>
+      </div>
+    </mat-expansion-panel>
+    
+    <mat-expansion-panel> 
+      
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Band Color
+        </mat-panel-title>
+        
+      </mat-expansion-panel-header>  
+      
+        <div class="list-group">
+          <a class="list-group-item list-group-item-action"
+          [class.active]="!band" routerLink="/">
+            All Band Colors
+          </a>
+          <a *ngFor="let b of band$ | async" 
+          class="list-group-item list-group-item-action"
+          routerLink="/" [queryParams]="{ band : b.key}"
+          [class.active]="band === b.key">     
+                {{b.name}}
+          </a>
+        </div> 
+       
+    </mat-expansion-panel>
+
+    <mat-expansion-panel> 
+      
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Dial Color
+        </mat-panel-title>
+        
+      </mat-expansion-panel-header>  
+      
+        <div class="list-group">
+          <a class="list-group-item list-group-item-action"
+          [class.active]="!dial" routerLink="/">
+            All Dial Colors
+          </a>
+          <a *ngFor="let d of dial$ | async" 
+          class="list-group-item list-group-item-action"
+          routerLink="/" [queryParams]="{ dial : d.key}"
+          [class.active]="dial === d.key">     
+                {{d.name}}
+          </a>
+        </div>
+       
+    </mat-expansion-panel>
+
+    <mat-expansion-panel> 
+      
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Band Make
+        </mat-panel-title>
+        
+      </mat-expansion-panel-header>  
+      
+        <div class="list-group">
+          <a class="list-group-item list-group-item-action"
+          [class.active]="!bmake" routerLink="/">
+            All Band Make
+          </a>
+          <a *ngFor="let bm of bmake$ | async" 
+          class="list-group-item list-group-item-action"
+          routerLink="/" [queryParams]="{ bmake : bm.key}"
+          [class.active]="bmake === bm.key">     
+                {{bm.name}} 
+          </a>
+        </div> 
+       
+    </mat-expansion-panel>
+</div>
+ 

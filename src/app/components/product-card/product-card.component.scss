@@ -1,0 +1,68 @@
+/* Card Size */
+.card-img-top {
+    height: 220px;
+    width: 180px;
+}
+
+.image-size {
+    text-align: center;
+}
+
+.card-body { 
+    margin-right: 35px;
+}
+
+#panel {
+    text-align: center;
+}
+
+.my-pagination /deep/ .ngx-pagination .current {
+    background: #686de0;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+.my-pagination /deep/ .ngx-pagination a, .ngx-pagination button {
+    text-decoration: none;
+    outline: none;
+}
+
+.my-pagination /deep/ .ngx-pagination {
+    margin-left: -50px;
+}
+
+.card-footer {
+    padding:0;
+}
+
+.card {
+    margin-bottom: 30px;
+}
+
+.btn, .card-footer {
+    border-radius: 10px;
+}
+
+#buttons {
+    background-color: none;
+    outline: none;
+}
+#buttons:hover {
+    outline: none;
+    box-shadow: 5px 6px 14px #888888;
+    transition: 0.5s ease-in-out;
+}
+
+#buttons2 {
+    background-color: none;
+    outline: none;
+}
+#buttons2:hover {
+    outline: none;
+    box-shadow: -5px 6px 14px #888888;
+    transition: 0.5s ease-in-out;
+}
+
+#panel {
+    text-align: center;
+}

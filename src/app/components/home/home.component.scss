@@ -1,0 +1,70 @@
+.toast-top-center {
+    margin-top: 20px;
+    }
+
+#banner {
+    height: 480px;
+    }
+
+/* Card Size */
+.card-img-top {
+    height: 220px;
+    width: 180px;
+}
+
+.image-size {
+    text-align: center;
+}
+
+.card-body { 
+    margin-right: 35px;
+}
+
+#panel {
+    text-align: center;
+}
+
+.my-pagination /deep/ .ngx-pagination .current {
+    background: #686de0;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+.my-pagination /deep/ .ngx-pagination a, .ngx-pagination button {
+    text-decoration: none;
+    outline: none;
+}
+
+.my-pagination /deep/ .ngx-pagination {
+    margin-left: -50px;
+}
+
+.card-footer {
+    padding:0;
+}
+
+.btn, .card-footer {
+    border-radius: 10px;
+}
+
+.card-header {
+    background-color: #22a6b3;
+    border-color: #22a6b3;
+    color: white;
+}
+
+// Side NavBar
+.list-group {
+    margin-left:4px;
+}
+
+.list-group-item.active {
+    background-color: #22a6b3;
+    border-color: #22a6b3;
+}
+
+.search-form-field {
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+

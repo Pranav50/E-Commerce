@@ -1,0 +1,53 @@
+<!--Navbar-->
+<mdb-navbar SideClass="navbar fixed-top navbar-expand-lg navbar-dark purple-gradient scrolling-navbar intro-fixed-nav" [containerInside]="false">
+ 
+  <!-- Navbar brand -->
+  <mdb-navbar-brand><a class="navbar-brand" routerLink="/"><b>Timer</b></a></mdb-navbar-brand>
+
+    <!-- Collapsible content -->
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+  </div>
+  
+  <!-- Collapsible content -->
+  <links>
+
+    <!-- Links -->
+    <ul class="navbar-nav ml-auto">
+
+        <ng-template #anonymousUser>
+          <li class="nav-item active" id="google-icon">
+            <a class="nav-link waves-light" type="button" (click)="login()" routerLink="/" mdbWavesEffect> 
+              <mdb-icon fab icon="google"></mdb-icon>Sign with Google</a>
+          </li>
+        </ng-template>
+
+      <!-- Dropdown -->
+      <li *ngIf="appUser; else anonymousUser" class="nav-item dropdown" id="profile" dropdown>
+        <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+          <mdb-icon fas style="font-size: 22px; " icon="user"></mdb-icon> {{ appUser.name | titlecase}} <span class="caret"></span></a>
+        <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
+          <ng-container *ngIf="appUser.isAdmin">
+            <a class="dropdown-item waves-light" mdbWavesEffect routerLink="/admin/products">Manage Products</a>
+          </ng-container>
+          <a class="dropdown-item waves-light" mdbWavesEffect (click)="logout()">Logout</a> 
+        </div>
+      </li>
+ 
+      <li class="nav-item">
+        <a class="nav-link waves-light" routerLink="/components/shopping-cart" mdbWavesEffect> <mdb-icon fas style="font-size: 22px; margin-top: 8px;" icon="shopping-cart"></mdb-icon>
+          <span class="badge info-color badge-pill" 
+          style="font-size:12px;" *ngIf="cart$ | async as cart">
+              {{ cart.totalItemsCount }}
+          </span> 
+        </a>
+      </li>
+      
+ 
+    </ul>
+    <!-- Links -->
+  </links>
+  <!-- Collapsible content -->
+
+</mdb-navbar>
+<!--/.Navbar-->

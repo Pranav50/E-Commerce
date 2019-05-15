@@ -1,0 +1,223 @@
+<!-- Material form register -->
+<div class="card" style="margin-top:70px">
+
+  <h5 class="card-header info-color white-text text-center py-1" 
+  style="margin-left:25px;margin-right:25px;border-radius:5px">
+      Add Product
+  </h5>
+ 
+
+  <div class="card-body px-lg-3 pt-0">
+    <div class="row">
+      <div class="col-md-6">
+          <form class="text-center p-4" style="color: #757575;" 
+          #f="ngForm" (ngSubmit)="save(f.value)">
+              <div class="form-row">
+                  <div class="col">
+
+                      <div class="md-form">
+                          <input type="text" #title="ngModel" [(ngModel)]="product.title" name="title" id="title" 
+                          placeholder="Title" class="form-control" required>
+
+                          <div class="alert alert-danger" class="alert-message" *ngIf="title.touched && title.invalid">
+                            Title is required
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+
+              <div >
+                <div class="custom-control custom-radio custom-control-inline">
+                  <input type="radio" #gender="ngModel" name="gender" [(ngModel)]="product.gender" value="Male" class="custom-control-input" id="defaultInline1" mdbInput>
+                  <label class="custom-control-label" for="defaultInline1">Male</label>
+                </div>
+                
+
+                <div class="custom-control custom-radio custom-control-inline">
+                  <input type="radio" #gender="ngModel" name="gender" [(ngModel)]="product.gender" value="Female" class="custom-control-input" id="defaultInline2" mdbInput>
+                  <label class="custom-control-label" for="defaultInline2">Female</label>
+                </div>
+              </div>
+              
+              <div class="alert alert-danger" class="alert-message" *ngIf="price.touched && price.invalid">
+                <div *ngIf="price.errors.required">Price is required</div>
+                <div *ngIf="price.errors.min">Price is 0 or higher</div>
+              </div>
+              <br>
+
+              <div class="md-form input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text md-addon">$</span>
+                </div>
+                <input #price="ngModel" type="number" placeholder="Price" 
+                [(ngModel)]="product.price" name="price" id="price" class="form-control" 
+                aria-label="Amount (to the nearest dollar)" required [min]="0">
+                <div class="input-group-append">
+                  <span class="input-group-text md-addon">.00</span>
+                </div>
+                
+            </div>
+            <div class="alert alert-danger" class="alert-message" *ngIf="price.touched && price.invalid">
+              <div *ngIf="price.errors.required">Price is required</div>
+              <div *ngIf="price.errors.min">Price is 0 or higher</div>
+            </div>
+            <br>
+            
+
+            <div class="md-form input-group mb-3">
+              <div class="input-group-prepend">
+                <button class="btn btn-md btn-default m-0 px-3" type="button" id="MaterialButton-addon1">Shape</button>
+              </div>
+              <select #shape="ngModel" [(ngModel)]="product.shape" name="shape" id="shape" class="browser-default custom-select" class="form-control"
+                aria-describedby="MaterialButton-addon1"
+                 aria-label="Example select with button addon" required>
+                <option selected>Choose...</option>
+              <option *ngFor="let s of shape$ | async">
+                {{ s.name }}
+              </option>
+            </select>
+            
+            </div>
+            <div class="alert alert-danger" class="alert-message" *ngIf="shape.touched && shape.invalid">
+              Shape is required
+            </div>
+            <br>
+
+                  <div class="md-form input-group mb-3">
+                    <div class="input-group-prepend">
+                      <button class="btn btn-md btn-primary m-0 px-3" type="button" id="MaterialButton-addon1">Category</button>
+                    </div>
+                    <select #categories="ngModel" [(ngModel)]="product.categories" name="categories" id="categories" class="browser-default custom-select" class="form-control" placeholder=""
+                      aria-describedby="MaterialButton-addon1"
+                       aria-label="Example select with button addon" required>
+                      <option selected>Choose...</option>
+                    <option *ngFor="let c of categories$ | async">
+                      {{ c.name }}
+                    </option>
+                  </select>
+                  
+                  </div>
+                  <div class="alert alert-danger" class="alert-message" *ngIf="categories.touched && categories.invalid">
+                    Categories is required
+                  </div>
+                  <br>
+
+                  <div class="md-form input-group mb-3">
+                    <div class="input-group-prepend">
+                      <button class="btn btn-md btn-secondary m-0 px-3" type="button" id="MaterialButton-addon1">Dial Color</button>
+                    </div>
+                    <select #dial="ngModel" [(ngModel)]="product.dial" name="dial" id="dial" class="browser-default custom-select" class="form-control" placeholder=""
+                      aria-describedby="MaterialButton-addon1"
+                       aria-label="Example select with button addon" required>
+                      <option selected>Choose...</option>
+                    <option *ngFor="let d of dial$ | async">
+                      {{ d.name }}
+                    </option>
+                  </select>
+                  
+                  </div> 
+                  <div class="alert alert-danger" class="alert-message" *ngIf="dial.touched && dial.invalid">
+                    Dial Color is required
+                  </div>
+                  <br>
+
+                  <div class="md-form input-group mb-3">
+                    <div class="input-group-prepend">
+                      <button class="btn btn-md btn-warning m-0 px-3" type="button" id="MaterialButton-addon1">Band Color</button>
+                    </div>
+                    <select #band="ngModel" [(ngModel)]="product.band" name="band" id="band" class="browser-default custom-select" class="form-control" placeholder=""
+                      aria-describedby="MaterialButton-addon1"
+                       aria-label="Example select with button addon" required>
+                      <option selected>Choose...</option>
+                    <option *ngFor="let b of band$ | async">
+                      {{ b.name }}
+                    </option> 
+                  </select>
+                  
+                  </div>
+                  <div class="alert alert-danger" class="alert-message" *ngIf="band.touched && band.invalid">
+                    Band Color is required
+                  </div>
+                  <br>
+
+                  <div class="md-form input-group mb-3">
+                    <div class="input-group-prepend">
+                      <button class="btn btn-md btn-info m-0 px-3" type="button" id="MaterialButton-addon1">Band Make</button>
+                    </div>
+                    <select #bmake="ngModel" [(ngModel)]="product.bmake" name="bmake" id="bmake" class="browser-default custom-select" class="form-control" placeholder=""
+                      aria-describedby="MaterialButton-addon1"
+                       aria-label="Example select with button addon" required>
+                      <option selected>Choose...</option>
+                    <option *ngFor="let bm of bmake$ | async">
+                      {{ bm.name }}
+                    </option> 
+                  </select>
+                  
+                  </div>
+                  <div class="alert alert-danger" class="alert-message" *ngIf="bmake.touched && bmake.invalid">
+                    Band Make is required
+                  </div>
+                  <br>
+    
+                  <div class="md-form input-group mt-0 mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text md-addon" id="material-addon3">Image URL</span>
+                  </div>
+                  <input #imageUrl="ngModel" type="text" [(ngModel)]="product.imageUrl" name="imageUrl" 
+                  id="imageUrl" placeholder="Image URL" class="form-control" 
+                  id="material-url" aria-describedby="material-addon3" required url>
+                    
+                </div>
+                <div class="alert alert-danger" class="alert-message" *ngIf="imageUrl.touched && imageUrl.invalid">
+                  <div *ngIf="imageUrl.errors.required">URL is required</div>
+                  <div *ngIf="imageUrl.errors.url">URL is invalid</div>
+                </div>
+                  <br><br> 
+    
+
+              <button class="btn light-blue lighten-2 btn-lg btn-block">SAVE</button>
+              
+          </form>
+
+      </div>
+      <div class="col-md-6"> 
+          
+          <div class="card" style="width: 15rem;height:38rem;margin-top: 8rem"> 
+            <div class="view overlay" class="image-size">
+              <img class="card-img-top" [src]="product.imageUrl" alt="{{product.title}}" style="height: 18rem">
+                <a href="#!">
+                <div class="mask rgba-white-slight"></div>
+                </a>
+            </div>
+            <hr>
+            <div class="card-body">
+              <h4 class="card-title">{{product.title}}</h4>
+              <h4 class="card-text"><b>{{product.gender}}</b></h4>
+              <p class="card-title"><strong>{{product.price | currency:'USD':true}}</strong></p>
+              <div *ngIf="!shape.pristine && !product.key">
+                <h5 class="card-text">Shape: <b>{{product.shape}}</b></h5>  
+              </div>
+               <div *ngIf="!categories.pristine">
+                <h5 class="card-text">Category: <b>{{product.categories}}</b></h5>
+               </div>
+               <div *ngIf="!dial.pristine">
+                <h5 class="card-text">Dial Color: <b>{{product.dial}}</b></h5>
+               </div>
+               <div *ngIf="!band.pristine">
+                <h5 class="card-text">Band Color: <b>{{product.band}}</b></h5>
+               </div>
+               <div *ngIf="!bmake.pristine">
+                <h5 class="card-text">Band Make: <b>{{product.bmake}}</b></h5>
+               </div> 
+              </div>
+            </div>  
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
