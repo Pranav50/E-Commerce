@@ -1,6 +1,6 @@
 # Angular 7 Firebase Project
 
-The project is a complete revamp of Mosh Hamedani E-Commerce Project which was developed in Angular 4. This project is developed in Angular 7 and Firebase as a database. The project is brimmed with fresh new Material look and addition of new features like Payment, Sorting, Pagination and Searching in the main page. Also filled with Transitions, Router Animations and Smoth Scroll Effect.
+The project is a complete revamp of Mosh Hamedani E-Commerce Project which was developed in Angular 4. This project is developed in Angular 7 and Firebase as a database. The project is brimmed with fresh new Material look and addition of new features like Payment, Sorting, Pagination and Searching in the main page. Also filled with Transitions, Router Animations and Smooth Scroll Effect.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
 
