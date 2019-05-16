@@ -6,6 +6,10 @@ The project is a complete revamp of Mosh Hamedani E-Commerce Project which was d
 
 Note: Payment Option with Paypal is deactivated on the site as API key is removed. If you want Paypal Payment activated, just head on to Paypal Developer Account, Register and get the Sandbox API key and then paste it in check-out.component.ts file of the project in sandbox field and facilitator account in payee field. Remember to login with Paypal's buyer account which is provided in Paypal Developer Accounts and put the password and there you go.
 
+## Online Demo
+
+Just head over to online demo of this Angular 7 Firebase App [here](https://angularshop-4e6b0.firebaseapp.com).
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
 
 ## Development server
