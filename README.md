@@ -2,7 +2,7 @@
 
 The project is a complete revamp of Mosh Hamedani E-Commerce Project which was developed in Angular 4. This project is developed in Angular 7 and Firebase as a database. The project is brimmed with fresh new Material look and addition of new features like Payment, Sorting, Pagination and Searching in the main page. Also filled with Transitions, Router Animations and Smooth Scroll Effect.
 
-Please support this project by putting a Github star ⭐. pray Thanks
+Please support this project by putting a Github star ⭐. :pray: Thanks
 
 ## Installation
 
