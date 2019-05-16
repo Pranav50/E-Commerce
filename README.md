@@ -1,8 +1,16 @@
 # Angular 7 Firebase Project
 
-![image001](https://user-images.githubusercontent.com/18122343/57844760-53997b00-77ee-11e9-8e02-c9a343c8d6e8.jpg)
-
 The project is a complete revamp of Mosh Hamedani E-Commerce Project which was developed in Angular 4. This project is developed in Angular 7 and Firebase as a database. The project is brimmed with fresh new Material look and addition of new features like Payment, Sorting, Pagination and Searching in the main page. Also filled with Transitions, Router Animations and Smooth Scroll Effect.
+
+Please support this project by putting a Github star ⭐. pray Thanks
+
+## Installation
+
+Run  `npm install` to install all the required dependencies
+
+Run `ng serve` to start a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+![image001](https://user-images.githubusercontent.com/18122343/57844760-53997b00-77ee-11e9-8e02-c9a343c8d6e8.jpg)
 
 Note: Payment Option with Paypal is deactivated on the site as API key is removed. If you want Paypal Payment activated, just head on to Paypal Developer Account, Register and get the Sandbox API key and then paste it in check-out.component.ts file of the project in sandbox field and facilitator account in payee field. Remember to login with Paypal's buyer account which is provided in Paypal Developer Accounts and put the password and there you go.
 
