@@ -10,9 +10,9 @@ Note: Payment Option with Paypal is deactivated on the site as API key is remove
 
 Just head over to online demo of this Angular 7 Firebase App [here](https://angularshop-4e6b0.firebaseapp.com).
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
-
 ## Development server
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
